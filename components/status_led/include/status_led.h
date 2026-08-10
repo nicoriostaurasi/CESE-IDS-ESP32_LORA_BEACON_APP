@@ -22,7 +22,6 @@ typedef enum {
 esp_err_t status_led_init(void);
 esp_err_t status_led_on(void);
 esp_err_t status_led_off(void);
-esp_err_t status_led_toggle(void);
 esp_err_t status_led_set_pattern(status_led_pattern_t pattern);
 esp_err_t status_led_tick(void);
 

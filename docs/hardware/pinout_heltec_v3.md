@@ -2,12 +2,10 @@
 
 ## Alcance
 
-Este documento corresponde a la Fase 3 del plan de trabajo. Su objetivo es
-documentar la asignacion de pines internos de la Heltec WiFi LoRa 32 V3 y dejar
-separados los pines reservados de los GPIO recomendados para sensores externos.
-
-En esta fase no se implementan drivers funcionales ni se inicializan OLED, radio,
-LED o botones. La validacion funcional de OLED/LED queda para la Fase 3.5.
+Este documento describe la asignación de pines utilizada por la demo IDS sobre
+la Heltec WiFi LoRa 32 V3 y separa los periféricos internos de los GPIO que
+podrían reservarse para futuras extensiones. La aplicación actual inicializa la
+OLED, el LED digital, VEXT y el radio SX1262.
 
 ## Fuentes
 
@@ -73,8 +71,8 @@ perifericos internos y son recomendados para hardware externo:
 ## Notas de implementacion
 
 - Todos los pines se centralizan en `components/board_config`.
-- Los componentes futuros no deben hardcodear GPIO.
-- OLED, LED, VEXT y radio se inicializaran en fases posteriores.
+- Los componentes no deben hardcodear GPIO fuera de `board_config`.
+- La demo actual inicializa OLED, LED, VEXT y radio durante el arranque.
 - Antes de conectar sensores externos, revisar nuevamente el esquematico de la
   revision fisica de placa usada.
 - La medicion formal de bateria/autonomia queda fuera de alcance del proyecto.

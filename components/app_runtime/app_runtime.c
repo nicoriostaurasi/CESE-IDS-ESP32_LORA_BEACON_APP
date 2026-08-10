@@ -130,8 +130,6 @@ static void radio_task(void *arg)
             beacon_protocol_result_t format_ret =
                 beacon_protocol_format(&message, tx_buffer, sizeof(tx_buffer), &tx_length);
 
-            app_event_t tx_event = { .type = APP_EVENT_SET_STATE, .state = BOARD_STATE_TX };
-            send_event(&tx_event);
             if (format_ret == BEACON_PROTOCOL_OK &&
                 sx1262_radio_send(tx_buffer, tx_length, BEACON_RADIO_OPERATION_TIMEOUT_MS) == ESP_OK) {
                 last_tx_sequence = tx_sequence++;
@@ -149,8 +147,6 @@ static void radio_task(void *arg)
             continue;
         }
 
-        app_event_t rx_event = { .type = APP_EVENT_SET_STATE, .state = BOARD_STATE_RX };
-        send_event(&rx_event);
         uint8_t rx_buffer[BEACON_PROTOCOL_MAX_WIRE_LEN] = { 0 };
         size_t rx_length = 0U;
         uint32_t timeout_ms = (uint32_t)((next_tx_us - now_us + 999LL) / 1000LL);
@@ -177,6 +173,8 @@ static void radio_task(void *arg)
         last_rx_sequence = message.sequence;
         ESP_ERROR_CHECK_WITHOUT_ABORT(sx1262_radio_get_last_packet_metrics(&last_rssi, &last_snr));
         beacon_metrics_record(&link_metrics, message.sequence, last_rssi, last_snr, rx_interval_ms);
+        app_event_t rx_event = { .type = APP_EVENT_SET_STATE, .state = BOARD_STATE_RX };
+        send_event(&rx_event);
         ESP_LOGI(TAG, "RX sender=%u seq=%03lu dt=%lu ms RSSI=%d dBm SNR=%d dB",
                  message.sender_id, (unsigned long)message.sequence,
                  (unsigned long)rx_interval_ms, last_rssi, last_snr);

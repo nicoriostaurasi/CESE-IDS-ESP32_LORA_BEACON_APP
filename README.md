@@ -27,6 +27,11 @@ RX:004 TX:005
 DT:3001ms P:-39dBm
 ```
 
+El LED digital integrado permanece apagado durante el arranque, la espera y la
+transmisión. Se enciende durante 1 segundo únicamente después de recibir y
+validar un paquete del otro nodo. El pulso no bloquea las tareas FreeRTOS y el
+monitor informa su duración real.
+
 ## Componentes
 
 - `app_runtime`: planificación periódica, recepción y tareas FreeRTOS.
