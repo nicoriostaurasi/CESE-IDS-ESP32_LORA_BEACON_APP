@@ -1,0 +1,17 @@
+# Keep files executed inside Linux containers in Unix format.
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Native Windows launchers.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+
+# Source and documentation.
+*.c text eol=lf
+*.h text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf

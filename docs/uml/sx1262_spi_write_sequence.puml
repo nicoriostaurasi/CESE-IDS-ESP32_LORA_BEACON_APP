@@ -1,0 +1,38 @@
+@startuml sx1262_spi_write_sequence
+autonumber
+actor Caller
+control Radio as "sx1262_radio"
+control Transport as "sx1262_transport"
+boundary HAL as "ESP-IDF adapter"
+entity SX1262
+
+Caller -> Radio : sx1262_radio_set_config()/send()
+Radio -> Transport : write(opcode, args)
+Transport -> Transport : validar y construir trama
+Transport -> HAL : lock(timeout)
+alt lock no disponible
+  HAL --> Transport : false
+  Transport --> Radio : LOCK_TIMEOUT
+else lock obtenido
+  loop mientras BUSY y antes del deadline
+    Transport -> HAL : is_busy()
+    HAL -> SX1262 : leer GPIO BUSY
+    SX1262 --> HAL : nivel
+    HAL --> Transport : busy
+    Transport -> HAL : sleep_ms(1)
+  end
+  alt BUSY timeout
+    Transport -> HAL : unlock()
+    Transport --> Radio : BUSY_TIMEOUT
+  else radio listo
+    Transport -> HAL : transfer([opcode|args])
+    HAL -> SX1262 : SPI con NSS atomico
+    SX1262 --> HAL : resultado
+    HAL --> Transport : ok/error
+    Transport -> Transport : esperar BUSY bajo
+    Transport -> HAL : unlock()
+    Transport --> Radio : resultado tipado
+  end
+end
+Radio --> Caller : esp_err_t
+@enduml

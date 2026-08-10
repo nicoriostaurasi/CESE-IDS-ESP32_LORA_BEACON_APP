@@ -1,0 +1,5 @@
+services:
+  idf:
+    privileged: true
+    devices:
+      - "${ESPPORT:-/dev/ttyUSB0}:${ESPPORT:-/dev/ttyUSB0}"

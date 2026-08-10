@@ -1,0 +1,36 @@
+@startuml sx1262_spi_components
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+package "Aplicacion" {
+  component app_runtime <<app>>
+  component beacon_protocol <<control>>
+}
+
+package "Driver SX1262" {
+  component sx1262_radio <<facade>>
+  component sx1262_params <<utility>>
+  component sx1262_transport <<control>>
+}
+
+package "HAL ESP-IDF" {
+  component "SPI master adapter" as spi_adapter <<hardware>>
+  component "GPIO BUSY" as busy_adapter <<hardware>>
+  component "FreeRTOS mutex/time" as rtos_adapter <<utility>>
+}
+
+app_runtime ..> sx1262_radio : usa API
+app_runtime ..> beacon_protocol : formatea y valida tramas
+app_runtime ..> sx1262_radio : usa API
+sx1262_radio ..> sx1262_params : valida/convierte
+sx1262_radio *--> "1" sx1262_transport : posee
+sx1262_transport ..> spi_adapter : callback transfer
+sx1262_transport ..> busy_adapter : callback is_busy
+sx1262_transport ..> rtos_adapter : lock/time/sleep
+
+note right of sx1262_transport
+  No depende de ESP-IDF.
+  El adaptador se inyecta
+  mediante function pointers.
+end note
+@enduml

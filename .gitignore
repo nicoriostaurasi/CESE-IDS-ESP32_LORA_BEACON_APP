@@ -1,0 +1,22 @@
+# ESP-IDF generated files
+build/
+build_*/
+managed_components/
+sdkconfig
+sdkconfig.old
+
+# Host-test products
+build_host/
+components/sx1262_radio/build_host/
+
+# Local environment and evidence
+.env
+*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak

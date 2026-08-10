@@ -1,0 +1,27 @@
+@startuml sx1262_spi_read_sequence
+autonumber
+actor Caller
+control Radio as "sx1262_radio"
+control Transport as "sx1262_transport"
+boundary HAL as "ESP-IDF adapter"
+entity SX1262
+
+Caller -> Radio : sx1262_radio_receive()/get status
+Radio -> Transport : read(opcode, args, data_len)
+Transport -> Transport : TX=[opcode|args|dummy|clocks]
+Transport -> HAL : lock(timeout)
+Transport -> HAL : is_busy() hasta listo/deadline
+alt disponible
+  Transport -> HAL : transfer(TX, RX)
+  HAL -> SX1262 : SPI full-duplex
+  SX1262 --> HAL : status + data
+  HAL --> Transport : RX
+  Transport -> Transport : copiar RX[offset..] a data
+  Transport -> HAL : unlock()
+  Transport --> Radio : OK
+else timeout o error
+  Transport -> HAL : unlock() si fue adquirido
+  Transport --> Radio : resultado tipado
+end
+Radio --> Caller : esp_err_t + datos
+@enduml

@@ -1,0 +1,3 @@
+[submodule "components/sx1262_radio"]
+	path = components/sx1262_radio
+	url = https://github.com/nicoriostaurasi/ESP32-S3-SX1262-DRIVER.git

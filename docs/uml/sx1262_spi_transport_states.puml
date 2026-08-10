@@ -1,0 +1,27 @@
+@startuml sx1262_spi_transport_states
+hide empty description
+
+[*] --> Idle
+Idle --> Locked : write/read [lock obtenido]
+Idle --> LockError : write/read [lock timeout]
+Locked --> WaitReady : iniciar deadline
+WaitReady --> WaitReady : BUSY / sleep 1 ms
+WaitReady --> Transfer : !BUSY
+WaitReady --> BusyError : deadline vencido
+Transfer --> IoError : transfer fallo
+Transfer --> WaitComplete : escritura exitosa
+Transfer --> Unlock : lectura exitosa / copiar datos
+WaitComplete --> WaitComplete : BUSY / sleep 1 ms
+WaitComplete --> Unlock : !BUSY
+WaitComplete --> BusyError : deadline vencido
+BusyError --> Unlock
+IoError --> Unlock
+Unlock --> Idle : liberar mutex / retornar resultado
+LockError --> Idle : retornar LOCK_TIMEOUT
+
+note right of Idle
+  Estado estable entre operaciones.
+  Cada llamada recorre la maquina
+  de forma sincronica.
+end note
+@enduml

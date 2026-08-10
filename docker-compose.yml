@@ -1,0 +1,18 @@
+services:
+  idf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        IDF_IMAGE: ${IDF_IMAGE:-espressif/idf:v5.3.5}
+    image: cese-ids-beacon-idf:${IDF_IMAGE_TAG:-v5.3.5}
+    working_dir: /workspace/firmware
+    environment:
+      IDF_TARGET: esp32s3
+      ESPPORT: ${ESPPORT:-/dev/ttyUSB0}
+      ESPBAUD: ${ESPBAUD:-115200}
+      HOME: /tmp
+    volumes:
+      - .:/workspace/firmware
+    stdin_open: true
+    tty: true

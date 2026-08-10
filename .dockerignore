@@ -1,0 +1,8 @@
+build/
+managed_components/
+sdkconfig
+sdkconfig.old
+.git/
+*.log
+*.tmp
+*.bak
