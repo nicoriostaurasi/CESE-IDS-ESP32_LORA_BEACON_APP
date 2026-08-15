@@ -12,6 +12,7 @@ components/sx1262_radio/build_host/
 # Local environment and evidence
 .env
 *.log
+!monitor_node_0.log
 
 # Editor and operating-system files
 .vscode/

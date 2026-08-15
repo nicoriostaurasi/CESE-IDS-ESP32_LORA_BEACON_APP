@@ -1,0 +1,570 @@
+Executing action: monitor
+Running idf_monitor in directory /workspace/firmware
+Executing "/opt/esp/python_env/idf5.3_py3.10_env/bin/python /opt/esp/idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /workspace/firmware/build/simai_mesh.elf -m '/opt/esp/python_env/idf5.3_py3.10_env/bin/python' '/opt/esp/idf/tools/idf.py' '-p' '/dev/ttyUSB0'"...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x1828
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xce8
+load:0x403cb700,len:0x2eb8
+entry 0x403c8918
+[0;32mI (27) boot: ESP-IDF v5.3.5 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug  9 2026 20:00:28[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot: efuse block revision: v1.4[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (43) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (52) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (61) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (95) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0f1a0h ( 61856) map[0m
+[0;32mI (115) esp_image: segment 1: paddr=0001f1c8 vaddr=3fc94a00 size=00e50h (  3664) load[0m
+[0;32mI (116) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=20f18h (134936) map[0m
+[0;32mI (145) esp_image: segment 3: paddr=00040f40 vaddr=3fc95850 size=021d0h (  8656) load[0m
+[0;32mI (148) esp_image: segment 4: paddr=00043118 vaddr=40374000 size=109d0h ( 68048) load[0m
+[0;32mI (173) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (173) boot: Disabling RNG early entropy source...[0m
+[0;32mI (185) cpu_start: Multicore app[0m
+[0;32mI (194) cpu_start: Pro cpu start user code[0m
+[0;32mI (194) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (194) app_init: Application information:[0m
+[0;32mI (197) app_init: Project name:     ids_lora_beacon[0m
+[0;32mI (203) app_init: App version:      ids-beacon-node-1[0m
+[0;32mI (208) app_init: Compile time:     Aug  9 2026 23:23:53[0m
+[0;32mI (214) app_init: ELF file SHA256:  6f17e7f36...[0m
+[0;32mI (220) app_init: ESP-IDF:          v5.3.5[0m
+[0;32mI (225) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (229) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (234) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (239) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FC987E0 len 00050F30 (323 KiB): RAM[0m
+[0;32mI (252) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (258) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (265) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (272) spi_flash: detected chip: generic[0m
+[0;32mI (276) spi_flash: flash io: dio[0m
+[0;32mI (280) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (286) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (294) main_task: Started on CPU0[0m
+[0;32mI (324) main_task: Calling app_main()[0m
+[0;32mI (324) IDS_BEACON: Firmware: IDS LoRa Beacon[0m
+[0;32mI (324) IDS_BEACON: Project: ids_lora_beacon[0m
+[0;32mI (324) IDS_BEACON: Version: ids-beacon-node-1[0m
+[0;32mI (334) IDS_BEACON: ESP-IDF: v5.3.5[0m
+[0;32mI (334) IDS_BEACON: Application: IDS LoRa beacon test[0m
+[0;32mI (344) BOARD_CONFIG: Platform: Heltec WiFi LoRa 32 V3 433 MHz[0m
+[0;32mI (354) BOARD_CONFIG: MCU: ESP32-S3[0m
+[0;32mI (354) BOARD_CONFIG: Radio: SX1262[0m
+[0;32mI (354) BOARD_CONFIG: USB-UART: CP2102[0m
+[0;32mI (364) BOARD_CONFIG: OLED: SSD1306-compatible 128x64[0m
+[0;32mI (364) IDS_BEACON: CPU cores: 2[0m
+[0;32mI (374) IDS_BEACON: Flash size: 8 MB[0m
+[0;32mI (374) BOARD_CONFIG: OLED SDA: GPIO17[0m
+[0;32mI (384) BOARD_CONFIG: OLED SCL: GPIO18[0m
+[0;32mI (384) BOARD_CONFIG: OLED RESET: GPIO21[0m
+[0;32mI (394) BOARD_CONFIG: SX1262 MOSI: GPIO10[0m
+[0;32mI (394) BOARD_CONFIG: SX1262 MISO: GPIO11[0m
+[0;32mI (394) BOARD_CONFIG: SX1262 SCLK: GPIO9[0m
+[0;32mI (404) BOARD_CONFIG: SX1262 NSS: GPIO8[0m
+[0;32mI (404) BOARD_CONFIG: SX1262 RESET: GPIO12[0m
+[0;32mI (414) BOARD_CONFIG: SX1262 BUSY: GPIO13[0m
+[0;32mI (414) BOARD_CONFIG: SX1262 DIO1: GPIO14[0m
+[0;32mI (424) BOARD_CONFIG: STATUS LED: GPIO35[0m
+[0;32mI (424) BOARD_CONFIG: USER BUTTON: TODO_VERIFICAR[0m
+[0;32mI (434) BOARD_CONFIG: VEXT CONTROL: GPIO36[0m
+[0;32mI (434) BOARD_CONFIG: USB UART TX: GPIO43[0m
+[0;32mI (444) BOARD_CONFIG: USB UART RX: GPIO44[0m
+[0;32mI (444) gpio: GPIO[35]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (454) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (454) IDS_BEACON: app_main completed initialization; FreeRTOS tasks are running[0m
+[0;32mI (464) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (454) gpio: GPIO[36]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (484) gpio: GPIO[14]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (564) SX1262_RADIO: Configured LoRa: freq=433000000 Hz sf=7 bw=125000 cr=4/5 preamble=8 tx=14 dBm[0m
+[0;32mI (564) SX1262_RADIO: SX1262 initialized[0m
+[0;31mE (564) SX1262_RADIO: radio_send_locked(414): invalid tx request[0m
+[0;31mE (574) SX1262_RADIO: radio_receive_locked(462): invalid rx request[0m
+[0;31mE (584) SX1262_RADIO: radio_get_last_packet_metrics_locked(520): no received packet metrics available[0m
+[0;32mI (594) gpio: GPIO[21]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (594) IDS_BEACON: API ERROR SELF-TEST invalid-timeout/metrics-before-RX result=PASS[0m
+[0;32mI (614) IDS_BEACON: node=1 period=3000 ms offset=1500 ms power=14 dBm[0m
+[0;32mI (644) gpio: GPIO[17]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (644) gpio: GPIO[18]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (684) OLED_DISPLAY: OLED initialized at 0x3C[0m
+[0;32mI (2174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (2174) IDS_BEACON: TX seq=001 payload="SIMAI,1,001" power=14 dBm[0m
+[0;32mI (2434) SX1262_RADIO: RX done: 11 bytes RSSI=-2 dBm SNR=12 dB[0m
+[0;32mI (2434) IDS_BEACON: RX sender=0 seq=493 dt=0 ms RSSI=-2 dBm SNR=12 dB[0m
+[0;32mI (5034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (5034) IDS_BEACON: RX sender=0 seq=001 dt=2599 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (5174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (5174) IDS_BEACON: TX seq=002 payload="SIMAI,1,002" power=14 dBm[0m
+[0;32mI (8034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (8034) IDS_BEACON: RX sender=0 seq=002 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (8174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (8174) IDS_BEACON: TX seq=003 payload="SIMAI,1,003" power=14 dBm[0m
+[0;32mI (11034) SX1262_RADIO: RX done: 11 bytes RSSI=-6 dBm SNR=12 dB[0m
+[0;32mI (11034) IDS_BEACON: RX sender=0 seq=003 dt=2999 ms RSSI=-6 dBm SNR=12 dB[0m
+[0;32mI (11174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (11174) IDS_BEACON: TX seq=004 payload="SIMAI,1,004" power=14 dBm[0m
+[0;32mI (14034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (14034) IDS_BEACON: RX sender=0 seq=004 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (14174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (14174) IDS_BEACON: TX seq=005 payload="SIMAI,1,005" power=14 dBm[0m
+[0;32mI (17034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (17034) IDS_BEACON: RX sender=0 seq=005 dt=3000 ms RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (17174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (17174) IDS_BEACON: TX seq=006 payload="SIMAI,1,006" power=14 dBm[0m
+[0;32mI (20034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (20034) IDS_BEACON: RX sender=0 seq=006 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (20174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (20174) IDS_BEACON: TX seq=007 payload="SIMAI,1,007" power=14 dBm[0m
+[0;32mI (23034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (23034) IDS_BEACON: RX sender=0 seq=007 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (23174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (23174) IDS_BEACON: TX seq=008 payload="SIMAI,1,008" power=14 dBm[0m
+[0;32mI (26034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (26034) IDS_BEACON: RX sender=0 seq=008 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (26174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (26174) IDS_BEACON: TX seq=009 payload="SIMAI,1,009" power=14 dBm[0m
+[0;32mI (29034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (29034) IDS_BEACON: RX sender=0 seq=009 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (29174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (29174) IDS_BEACON: TX seq=010 payload="SIMAI,1,010" power=14 dBm[0m
+[0;32mI (32034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (32034) IDS_BEACON: RX sender=0 seq=010 dt=3000 ms RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (32174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (32174) IDS_BEACON: TX seq=011 payload="SIMAI,1,011" power=14 dBm[0m
+[0;32mI (35034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (35034) IDS_BEACON: RX sender=0 seq=011 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (35174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (35174) IDS_BEACON: TX seq=012 payload="SIMAI,1,012" power=14 dBm[0m
+[0;32mI (38034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (38034) IDS_BEACON: RX sender=0 seq=012 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (38174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (38174) IDS_BEACON: TX seq=013 payload="SIMAI,1,013" power=14 dBm[0m
+[0;32mI (41034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (41034) IDS_BEACON: RX sender=0 seq=013 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (41174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (41174) IDS_BEACON: TX seq=014 payload="SIMAI,1,014" power=14 dBm[0m
+[0;32mI (44034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (44034) IDS_BEACON: RX sender=0 seq=014 dt=3000 ms RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (44174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (44174) IDS_BEACON: TX seq=015 payload="SIMAI,1,015" power=14 dBm[0m
+[0;32mI (47034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (47034) IDS_BEACON: RX sender=0 seq=015 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (47174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (47174) IDS_BEACON: TX seq=016 payload="SIMAI,1,016" power=14 dBm[0m
+[0;32mI (50034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (50034) IDS_BEACON: RX sender=0 seq=016 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (50174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (50174) IDS_BEACON: TX seq=017 payload="SIMAI,1,017" power=14 dBm[0m
+[0;32mI (53034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (53034) IDS_BEACON: RX sender=0 seq=017 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (53174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (53174) IDS_BEACON: TX seq=018 payload="SIMAI,1,018" power=14 dBm[0m
+[0;32mI (56034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (56034) IDS_BEACON: RX sender=0 seq=018 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (56174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (56174) IDS_BEACON: TX seq=019 payload="SIMAI,1,019" power=14 dBm[0m
+[0;32mI (59034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (59034) IDS_BEACON: RX sender=0 seq=019 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (59174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (59174) IDS_BEACON: TX seq=020 payload="SIMAI,1,020" power=14 dBm[0m
+[0;32mI (62034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (62034) IDS_BEACON: RX sender=0 seq=020 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (62174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (62174) IDS_BEACON: TX seq=021 payload="SIMAI,1,021" power=14 dBm[0m
+[0;32mI (65034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (65034) IDS_BEACON: RX sender=0 seq=021 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (65174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (65174) IDS_BEACON: TX seq=022 payload="SIMAI,1,022" power=14 dBm[0m
+[0;32mI (68034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (68034) IDS_BEACON: RX sender=0 seq=022 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (68174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (68174) IDS_BEACON: TX seq=023 payload="SIMAI,1,023" power=14 dBm[0m
+[0;32mI (71034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (71034) IDS_BEACON: RX sender=0 seq=023 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (71174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (71174) IDS_BEACON: TX seq=024 payload="SIMAI,1,024" power=14 dBm[0m
+[0;32mI (74034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (74034) IDS_BEACON: RX sender=0 seq=024 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (74174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (74174) IDS_BEACON: TX seq=025 payload="SIMAI,1,025" power=14 dBm[0m
+[0;32mI (77034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (77034) IDS_BEACON: RX sender=0 seq=025 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (77174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (77174) IDS_BEACON: TX seq=026 payload="SIMAI,1,026" power=14 dBm[0m
+[0;32mI (80034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (80034) IDS_BEACON: RX sender=0 seq=026 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (80174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (80174) IDS_BEACON: TX seq=027 payload="SIMAI,1,027" power=14 dBm[0m
+[0;32mI (83034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (83034) IDS_BEACON: RX sender=0 seq=027 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (83174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (83174) IDS_BEACON: TX seq=028 payload="SIMAI,1,028" power=14 dBm[0m
+[0;32mI (86034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (86034) IDS_BEACON: RX sender=0 seq=028 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (86174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (86174) IDS_BEACON: TX seq=029 payload="SIMAI,1,029" power=14 dBm[0m
+[0;32mI (89034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (89034) IDS_BEACON: RX sender=0 seq=029 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (89174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (89174) IDS_BEACON: TX seq=030 payload="SIMAI,1,030" power=14 dBm[0m
+[0;32mI (92034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (92034) IDS_BEACON: RX sender=0 seq=030 dt=2999 ms RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (92174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (92174) IDS_BEACON: TX seq=031 payload="SIMAI,1,031" power=14 dBm[0m
+[0;32mI (95034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (95034) IDS_BEACON: RX sender=0 seq=031 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (95174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (95174) IDS_BEACON: TX seq=032 payload="SIMAI,1,032" power=14 dBm[0m
+[0;32mI (98034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (98034) IDS_BEACON: RX sender=0 seq=032 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (98174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (98174) IDS_BEACON: TX seq=033 payload="SIMAI,1,033" power=14 dBm[0m
+[0;32mI (101034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (101034) IDS_BEACON: RX sender=0 seq=033 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (101174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (101174) IDS_BEACON: TX seq=034 payload="SIMAI,1,034" power=14 dBm[0m
+[0;32mI (104034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (104034) IDS_BEACON: RX sender=0 seq=034 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (104174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (104174) IDS_BEACON: TX seq=035 payload="SIMAI,1,035" power=14 dBm[0m
+[0;32mI (107034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (107034) IDS_BEACON: RX sender=0 seq=035 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (107174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (107174) IDS_BEACON: TX seq=036 payload="SIMAI,1,036" power=14 dBm[0m
+[0;32mI (110034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (110034) IDS_BEACON: RX sender=0 seq=036 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (110174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (110174) IDS_BEACON: TX seq=037 payload="SIMAI,1,037" power=14 dBm[0m
+[0;32mI (113034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (113034) IDS_BEACON: RX sender=0 seq=037 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (113174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (113174) IDS_BEACON: TX seq=038 payload="SIMAI,1,038" power=14 dBm[0m
+[0;32mI (116034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (116034) IDS_BEACON: RX sender=0 seq=038 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (116174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (116174) IDS_BEACON: TX seq=039 payload="SIMAI,1,039" power=14 dBm[0m
+[0;32mI (119034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (119034) IDS_BEACON: RX sender=0 seq=039 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (119174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (119174) IDS_BEACON: TX seq=040 payload="SIMAI,1,040" power=14 dBm[0m
+[0;32mI (122034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (122034) IDS_BEACON: RX sender=0 seq=040 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (122174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (122174) IDS_BEACON: TX seq=041 payload="SIMAI,1,041" power=14 dBm[0m
+[0;32mI (125034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (125034) IDS_BEACON: RX sender=0 seq=041 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (125174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (125174) IDS_BEACON: TX seq=042 payload="SIMAI,1,042" power=14 dBm[0m
+[0;32mI (128034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (128034) IDS_BEACON: RX sender=0 seq=042 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (128174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (128174) IDS_BEACON: TX seq=043 payload="SIMAI,1,043" power=14 dBm[0m
+[0;32mI (131034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (131034) IDS_BEACON: RX sender=0 seq=043 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (131174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (131174) IDS_BEACON: TX seq=044 payload="SIMAI,1,044" power=14 dBm[0m
+[0;32mI (134034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (134034) IDS_BEACON: RX sender=0 seq=044 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (134174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (134174) IDS_BEACON: TX seq=045 payload="SIMAI,1,045" power=14 dBm[0m
+[0;32mI (137034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (137034) IDS_BEACON: RX sender=0 seq=045 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (137174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (137174) IDS_BEACON: TX seq=046 payload="SIMAI,1,046" power=14 dBm[0m
+[0;32mI (140034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (140034) IDS_BEACON: RX sender=0 seq=046 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (140174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (140174) IDS_BEACON: TX seq=047 payload="SIMAI,1,047" power=14 dBm[0m
+[0;32mI (143034) SX1262_RADIO: RX done: 11 bytes RSSI=-35 dBm SNR=13 dB[0m
+[0;32mI (143034) IDS_BEACON: RX sender=0 seq=047 dt=3000 ms RSSI=-35 dBm SNR=13 dB[0m
+[0;32mI (143174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (143174) IDS_BEACON: TX seq=048 payload="SIMAI,1,048" power=14 dBm[0m
+[0;32mI (146034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (146034) IDS_BEACON: RX sender=0 seq=048 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (146174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (146174) IDS_BEACON: TX seq=049 payload="SIMAI,1,049" power=14 dBm[0m
+[0;32mI (149034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (149034) IDS_BEACON: RX sender=0 seq=049 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (149174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (149174) IDS_BEACON: TX seq=050 payload="SIMAI,1,050" power=14 dBm[0m
+[0;32mI (152034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (152034) IDS_BEACON: RX sender=0 seq=050 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (152174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (152174) IDS_BEACON: TX seq=051 payload="SIMAI,1,051" power=14 dBm[0m
+[0;32mI (155034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (155034) IDS_BEACON: RX sender=0 seq=051 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (155174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (155174) IDS_BEACON: TX seq=052 payload="SIMAI,1,052" power=14 dBm[0m
+[0;32mI (158034) SX1262_RADIO: RX done: 11 bytes RSSI=-35 dBm SNR=12 dB[0m
+[0;32mI (158034) IDS_BEACON: RX sender=0 seq=052 dt=3000 ms RSSI=-35 dBm SNR=12 dB[0m
+[0;32mI (158174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (158174) IDS_BEACON: TX seq=053 payload="SIMAI,1,053" power=14 dBm[0m
+[0;32mI (161034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (161034) IDS_BEACON: RX sender=0 seq=053 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (161174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (161174) IDS_BEACON: TX seq=054 payload="SIMAI,1,054" power=14 dBm[0m
+[0;32mI (164034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (164034) IDS_BEACON: RX sender=0 seq=054 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (164174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (164174) IDS_BEACON: TX seq=055 payload="SIMAI,1,055" power=14 dBm[0m
+[0;32mI (167034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (167034) IDS_BEACON: RX sender=0 seq=055 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (167174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (167174) IDS_BEACON: TX seq=056 payload="SIMAI,1,056" power=14 dBm[0m
+[0;32mI (170034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (170034) IDS_BEACON: RX sender=0 seq=056 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (170174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (170174) IDS_BEACON: TX seq=057 payload="SIMAI,1,057" power=14 dBm[0m
+[0;32mI (173034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (173034) IDS_BEACON: RX sender=0 seq=057 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (173174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (173174) IDS_BEACON: TX seq=058 payload="SIMAI,1,058" power=14 dBm[0m
+[0;32mI (176034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (176034) IDS_BEACON: RX sender=0 seq=058 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (176174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (176174) IDS_BEACON: TX seq=059 payload="SIMAI,1,059" power=14 dBm[0m
+[0;32mI (179034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (179034) IDS_BEACON: RX sender=0 seq=059 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (179174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (179174) IDS_BEACON: TX seq=060 payload="SIMAI,1,060" power=14 dBm[0m
+[0;32mI (182034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (182034) IDS_BEACON: RX sender=0 seq=060 dt=2999 ms RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (182174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (182174) IDS_BEACON: TX seq=061 payload="SIMAI,1,061" power=14 dBm[0m
+[0;32mI (185034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (185034) IDS_BEACON: RX sender=0 seq=061 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (185174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (185174) IDS_BEACON: TX seq=062 payload="SIMAI,1,062" power=14 dBm[0m
+[0;32mI (188034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (188034) IDS_BEACON: RX sender=0 seq=062 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (188174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (188174) IDS_BEACON: TX seq=063 payload="SIMAI,1,063" power=14 dBm[0m
+[0;32mI (191034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (191034) IDS_BEACON: RX sender=0 seq=063 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (191174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (191174) IDS_BEACON: TX seq=064 payload="SIMAI,1,064" power=14 dBm[0m
+[0;32mI (194034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (194034) IDS_BEACON: RX sender=0 seq=064 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (194174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (194174) IDS_BEACON: TX seq=065 payload="SIMAI,1,065" power=14 dBm[0m
+[0;32mI (197034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (197034) IDS_BEACON: RX sender=0 seq=065 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (197174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (197174) IDS_BEACON: TX seq=066 payload="SIMAI,1,066" power=14 dBm[0m
+[0;32mI (200034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (200034) IDS_BEACON: RX sender=0 seq=066 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (200174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (200174) IDS_BEACON: TX seq=067 payload="SIMAI,1,067" power=14 dBm[0m
+[0;32mI (203034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (203034) IDS_BEACON: RX sender=0 seq=067 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (203174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (203174) IDS_BEACON: TX seq=068 payload="SIMAI,1,068" power=14 dBm[0m
+[0;32mI (206034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (206034) IDS_BEACON: RX sender=0 seq=068 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (206174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (206174) IDS_BEACON: TX seq=069 payload="SIMAI,1,069" power=14 dBm[0m
+[0;32mI (209034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (209034) IDS_BEACON: RX sender=0 seq=069 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (209174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (209174) IDS_BEACON: TX seq=070 payload="SIMAI,1,070" power=14 dBm[0m
+[0;32mI (212034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (212034) IDS_BEACON: RX sender=0 seq=070 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (212174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (212174) IDS_BEACON: TX seq=071 payload="SIMAI,1,071" power=14 dBm[0m
+[0;32mI (215034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (215034) IDS_BEACON: RX sender=0 seq=071 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (215174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (215174) IDS_BEACON: TX seq=072 payload="SIMAI,1,072" power=14 dBm[0m
+[0;32mI (218034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (218034) IDS_BEACON: RX sender=0 seq=072 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (218174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (218174) IDS_BEACON: TX seq=073 payload="SIMAI,1,073" power=14 dBm[0m
+[0;32mI (221034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (221034) IDS_BEACON: RX sender=0 seq=073 dt=2999 ms RSSI=-3 dBm SNR=11 dB[0m
+[0;32mI (221174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (221174) IDS_BEACON: TX seq=074 payload="SIMAI,1,074" power=14 dBm[0m
+[0;32mI (224034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (224034) IDS_BEACON: RX sender=0 seq=074 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (224174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (224174) IDS_BEACON: TX seq=075 payload="SIMAI,1,075" power=14 dBm[0m
+[0;32mI (227034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (227034) IDS_BEACON: RX sender=0 seq=075 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (227174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (227174) IDS_BEACON: TX seq=076 payload="SIMAI,1,076" power=14 dBm[0m
+[0;32mI (230034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (230034) IDS_BEACON: RX sender=0 seq=076 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (230174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (230174) IDS_BEACON: TX seq=077 payload="SIMAI,1,077" power=14 dBm[0m
+[0;32mI (233034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (233034) IDS_BEACON: RX sender=0 seq=077 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (233174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (233174) IDS_BEACON: TX seq=078 payload="SIMAI,1,078" power=14 dBm[0m
+[0;32mI (236034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (236034) IDS_BEACON: RX sender=0 seq=078 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (236174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (236174) IDS_BEACON: TX seq=079 payload="SIMAI,1,079" power=14 dBm[0m
+[0;32mI (239034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (239034) IDS_BEACON: RX sender=0 seq=079 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (239174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (239174) IDS_BEACON: TX seq=080 payload="SIMAI,1,080" power=14 dBm[0m
+[0;32mI (242034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (242034) IDS_BEACON: RX sender=0 seq=080 dt=3000 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (242174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (242174) IDS_BEACON: TX seq=081 payload="SIMAI,1,081" power=14 dBm[0m
+[0;32mI (245034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (245034) IDS_BEACON: RX sender=0 seq=081 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (245174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (245174) IDS_BEACON: TX seq=082 payload="SIMAI,1,082" power=14 dBm[0m
+[0;32mI (248034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (248034) IDS_BEACON: RX sender=0 seq=082 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (248174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (248174) IDS_BEACON: TX seq=083 payload="SIMAI,1,083" power=14 dBm[0m
+[0;32mI (251034) SX1262_RADIO: RX done: 11 bytes RSSI=-5 dBm SNR=13 dB[0m
+[0;32mI (251034) IDS_BEACON: RX sender=0 seq=083 dt=3000 ms RSSI=-5 dBm SNR=13 dB[0m
+[0;32mI (251174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (251174) IDS_BEACON: TX seq=084 payload="SIMAI,1,084" power=14 dBm[0m
+[0;32mI (254034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (254034) IDS_BEACON: RX sender=0 seq=084 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (254174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (254174) IDS_BEACON: TX seq=085 payload="SIMAI,1,085" power=14 dBm[0m
+[0;32mI (257034) SX1262_RADIO: RX done: 11 bytes RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (257034) IDS_BEACON: RX sender=0 seq=085 dt=2999 ms RSSI=-3 dBm SNR=12 dB[0m
+[0;32mI (257174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (257174) IDS_BEACON: TX seq=086 payload="SIMAI,1,086" power=14 dBm[0m
+[0;32mI (260034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (260034) IDS_BEACON: RX sender=0 seq=086 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (260174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (260174) IDS_BEACON: TX seq=087 payload="SIMAI,1,087" power=14 dBm[0m
+[0;32mI (263034) SX1262_RADIO: RX done: 11 bytes RSSI=-9 dBm SNR=12 dB[0m
+[0;32mI (263034) IDS_BEACON: RX sender=0 seq=087 dt=2999 ms RSSI=-9 dBm SNR=12 dB[0m
+[0;32mI (263174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (263174) IDS_BEACON: TX seq=088 payload="SIMAI,1,088" power=14 dBm[0m
+[0;32mI (266034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (266034) IDS_BEACON: RX sender=0 seq=088 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (266174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (266174) IDS_BEACON: TX seq=089 payload="SIMAI,1,089" power=14 dBm[0m
+[0;32mI (269034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (269034) IDS_BEACON: RX sender=0 seq=089 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (269174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (269174) IDS_BEACON: TX seq=090 payload="SIMAI,1,090" power=14 dBm[0m
+[0;32mI (272034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (272034) IDS_BEACON: RX sender=0 seq=090 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (272174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (272174) IDS_BEACON: TX seq=091 payload="SIMAI,1,091" power=14 dBm[0m
+[0;32mI (275034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (275034) IDS_BEACON: RX sender=0 seq=091 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (275174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (275174) IDS_BEACON: TX seq=092 payload="SIMAI,1,092" power=14 dBm[0m
+[0;32mI (278034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (278034) IDS_BEACON: RX sender=0 seq=092 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (278174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (278174) IDS_BEACON: TX seq=093 payload="SIMAI,1,093" power=14 dBm[0m
+[0;32mI (281034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (281034) IDS_BEACON: RX sender=0 seq=093 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (281174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (281174) IDS_BEACON: TX seq=094 payload="SIMAI,1,094" power=14 dBm[0m
+[0;32mI (284034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (284034) IDS_BEACON: RX sender=0 seq=094 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (284174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (284174) IDS_BEACON: TX seq=095 payload="SIMAI,1,095" power=14 dBm[0m
+[0;32mI (287034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (287034) IDS_BEACON: RX sender=0 seq=095 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (287174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (287174) IDS_BEACON: TX seq=096 payload="SIMAI,1,096" power=14 dBm[0m
+[0;32mI (290034) SX1262_RADIO: RX done: 11 bytes RSSI=-5 dBm SNR=12 dB[0m
+[0;32mI (290034) IDS_BEACON: RX sender=0 seq=096 dt=2999 ms RSSI=-5 dBm SNR=12 dB[0m
+[0;32mI (290174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (290174) IDS_BEACON: TX seq=097 payload="SIMAI,1,097" power=14 dBm[0m
+[0;32mI (293034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (293034) IDS_BEACON: RX sender=0 seq=097 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (293174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (293174) IDS_BEACON: TX seq=098 payload="SIMAI,1,098" power=14 dBm[0m
+[0;32mI (296034) SX1262_RADIO: RX done: 11 bytes RSSI=-35 dBm SNR=12 dB[0m
+[0;32mI (296034) IDS_BEACON: RX sender=0 seq=098 dt=3000 ms RSSI=-35 dBm SNR=12 dB[0m
+[0;32mI (296174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (296174) IDS_BEACON: TX seq=099 payload="SIMAI,1,099" power=14 dBm[0m
+[0;32mI (299034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (299034) IDS_BEACON: RX sender=0 seq=099 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (299174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (299174) IDS_BEACON: TX seq=100 payload="SIMAI,1,100" power=14 dBm[0m
+[0;32mI (302034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (302034) IDS_BEACON: RX sender=0 seq=100 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (302174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (302174) IDS_BEACON: TX seq=101 payload="SIMAI,1,101" power=14 dBm[0m
+[0;32mI (305034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (305034) IDS_BEACON: RX sender=0 seq=101 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (305174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (305174) IDS_BEACON: TX seq=102 payload="SIMAI,1,102" power=14 dBm[0m
+[0;32mI (308034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (308034) IDS_BEACON: RX sender=0 seq=102 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (308174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (308174) IDS_BEACON: TX seq=103 payload="SIMAI,1,103" power=14 dBm[0m
+[0;32mI (311034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (311034) IDS_BEACON: RX sender=0 seq=103 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (311174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (311174) IDS_BEACON: TX seq=104 payload="SIMAI,1,104" power=14 dBm[0m
+[0;32mI (314034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (314034) IDS_BEACON: RX sender=0 seq=104 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (314174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (314174) IDS_BEACON: TX seq=105 payload="SIMAI,1,105" power=14 dBm[0m
+[0;32mI (317034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (317034) IDS_BEACON: RX sender=0 seq=105 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (317174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (317174) IDS_BEACON: TX seq=106 payload="SIMAI,1,106" power=14 dBm[0m
+[0;32mI (320034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (320034) IDS_BEACON: RX sender=0 seq=106 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (320174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (320174) IDS_BEACON: TX seq=107 payload="SIMAI,1,107" power=14 dBm[0m
+[0;32mI (323034) SX1262_RADIO: RX done: 11 bytes RSSI=-5 dBm SNR=13 dB[0m
+[0;32mI (323034) IDS_BEACON: RX sender=0 seq=107 dt=3000 ms RSSI=-5 dBm SNR=13 dB[0m
+[0;32mI (323174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (323174) IDS_BEACON: TX seq=108 payload="SIMAI,1,108" power=14 dBm[0m
+[0;32mI (326034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (326034) IDS_BEACON: RX sender=0 seq=108 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (326174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (326174) IDS_BEACON: TX seq=109 payload="SIMAI,1,109" power=14 dBm[0m
+[0;32mI (329034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (329034) IDS_BEACON: RX sender=0 seq=109 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (329174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (329174) IDS_BEACON: TX seq=110 payload="SIMAI,1,110" power=14 dBm[0m
+[0;32mI (332034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (332034) IDS_BEACON: RX sender=0 seq=110 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (332174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (332174) IDS_BEACON: TX seq=111 payload="SIMAI,1,111" power=14 dBm[0m
+[0;32mI (335034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (335034) IDS_BEACON: RX sender=0 seq=111 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (335174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (335174) IDS_BEACON: TX seq=112 payload="SIMAI,1,112" power=14 dBm[0m
+[0;32mI (338034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (338034) IDS_BEACON: RX sender=0 seq=112 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (338174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (338174) IDS_BEACON: TX seq=113 payload="SIMAI,1,113" power=14 dBm[0m
+[0;32mI (341034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (341034) IDS_BEACON: RX sender=0 seq=113 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (341174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (341174) IDS_BEACON: TX seq=114 payload="SIMAI,1,114" power=14 dBm[0m
+[0;32mI (344034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (344034) IDS_BEACON: RX sender=0 seq=114 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (344174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (344174) IDS_BEACON: TX seq=115 payload="SIMAI,1,115" power=14 dBm[0m
+[0;32mI (347034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (347034) IDS_BEACON: RX sender=0 seq=115 dt=2999 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (347174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (347174) IDS_BEACON: TX seq=116 payload="SIMAI,1,116" power=14 dBm[0m
+[0;32mI (350034) SX1262_RADIO: RX done: 11 bytes RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (350034) IDS_BEACON: RX sender=0 seq=116 dt=3000 ms RSSI=-4 dBm SNR=12 dB[0m
+[0;32mI (350174) SX1262_RADIO: TX done: 11 bytes[0m
+[0;32mI (350174) IDS_BEACON: TX seq=117 payload="SIMAI,1,117" power=14 dBm[0m
